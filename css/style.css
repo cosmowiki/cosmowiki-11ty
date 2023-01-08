@@ -1,0 +1,64 @@
+:root {
+  --spacing-smaller: 0.1rem;
+  --spacing-small: 0.3rem;
+  --spacing-medium: 0.5rem;
+  --spacing-large: 1rem;
+  --spacing-larger: 2rem;
+
+  --color-text: black;
+  --color-primary: black;
+  --color-secondary: blue;
+}
+
+
+/**
+ *
+ *  Overriding standard HTML elements, such as <body>, <a>, <ul>, etc.
+ *
+ */
+
+/* The reset */
+a, article, aside,
+body, blockquote,
+code,
+div,
+figure, figcaption, footer,
+header, html, h1, h2, h3, h4, h5, h6,
+img,
+kbd,
+li,
+main,
+nav,
+ol,
+pre, p,
+span,
+td,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+main {
+  max-width: 60rem; /* a readable width */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    margin: 1rem;
+  }
+
+  * {
+    line-break: loose;
+  }
+
+  h1, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    line-break: strict;
+  }
+}
