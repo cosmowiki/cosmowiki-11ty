@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/de"/>
+  </noscript>
+  <script type="application/javascript">
+    const locale = String(navigator.language).slice(0, 2);
+    const isKnownLocale = ['en', 'de'].includes(locale);
+    const redirectTo = isKnownLocale ? locale : 'de';
+    location.href = `/${redirectTo}`;
+  </script>
+</head>
+</html>
