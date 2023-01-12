@@ -33,7 +33,7 @@ a {text-decoration: none; cursor: pointer;}
 a, a:link, a:visited {color: #55f;} /*transition: all ease 1s;*/
 a img, a:link img, a:visited img {}
 a:focus, a:hover, a:active {text-decoration: underline;}
-/*a:focus, a:hover, a:active {color: #d00; transition: all ease .2s;}*/
+/*a:focus, a:hover, a:active {color: #d00; transition: all ease .1s;}*/
 a:focus img, a:hover img, a:active img {}
 button {color: #55f;}
 
@@ -356,7 +356,7 @@ div.summary-img.width-25,
 #pageSubMenu a:active {
 	color: #fff;
 	background: rgba(255, 255, 255, .3);
-	transition: all ease .2s;
+	transition: all ease .1s;
 }
 
 /*	dataArea ---------------------------------------------------------------- */
@@ -376,7 +376,7 @@ div.summary-img.width-25,
 .data-row:hover,
 .data-row:active {
 	background: rgba(255, 255, 255, .5);
-	transition: all ease .2s;
+	transition: all ease .1s;
 }
 
 /*	controlArea ------------------------------------------------------------- */
