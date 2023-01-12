@@ -256,42 +256,21 @@ main {margin: 34px auto 30px; max-width: 1000px;}
 	position: relative;
 }
 
-/* a#summaryToggle {
-	position: absolute; top: 5px; right: 7px;
-	background: transparent;
-}
-a#summaryToggle.expanded:focus::before,
-a#summaryToggle.expanded:hover::before,
-a#summaryToggle.expanded:active::before {
-	position: relative; bottom: .3em;
-	font-size: .7rem; content: 'Artikel verbergen ';
-}
-a#summaryToggle.collapsed:focus::before,
-a#summaryToggle.collapsed:hover::before,
-a#summaryToggle.collapsed:active::before {
-	position: relative; bottom: .3em;
-	font-size: .7rem; content: 'Artikel anzeigen ';
-}
-a#summaryToggle.expanded::after {
-	font-family: FontAwesome; font-size: 1.25rem; content: '\f147';
-}
-a#summaryToggle.collapsed::after {
-	font-family: FontAwesome; font-size: 1.25rem; content: '\f196';
-} */
-
 #summaryContainer {
   position: relative; margin-top: 1.75em; padding: 0 .25em 0; height: 100%;
   overflow: hidden;
 	border-bottom: 1px solid #ddd;
 }
-/* #summaryContainer.minimized {height: 0;} */
 
 #summaryToggleButton {
-	position: absolute; top: 5px; right: 7px;
+	position: absolute; top: 1em; right: 1em;
 }
 #summary > div {
   display: block;
 }
+
+#summaryTeaser {position: relative; margin-top: 1em;}
+#summaryTeaser p::first-letter {font-size: 1.5rem;}
 
 .summary-text,
 div.summary-img.width-100,
@@ -335,9 +314,8 @@ div.summary-img.width-25,
 .summary-img.width-25 img {width: 100%; height: auto;}
 .summary-img-text {margin-top: 2px; font-size: .7rem;}
 
-.summary-text {text-align: justify;}
-.summary-text:nth-of-type(odd) {text-indent: 1em;}
-.summary-text:first-of-type::first-letter {font-size: 1.5rem;}
+.summary-text {text-align: justify; letter-spacing: .04em;}
+/* .summary-text:nth-of-type(odd) {text-indent: 1em;} */
 
 .summary-list {list-style: square inside;}
 .summary-list li {margin: .5em 0;}

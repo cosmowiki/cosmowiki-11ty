@@ -68,8 +68,7 @@ title: Cosmowiki
           der Geschichte der Zukunft!</p>
         <h4>Wussten Sie schon?</h4>
         <ul class="summary-list">
-          <li>Die ca. 4000 Jahre alte <em>Himmelsscheibe von Nebra</em> ist eines der ältesten Zeugnisse
-            astronomischer Darstellungen der Menschheit.</li>
+          <li>Die ca. 4000 Jahre alte <em>Himmelsscheibe von Nebra</em> ist eine der ältesten astronomischen Darstellungen.</li>
           <li>Chinesische Astonomen beschrieben bereits 613 v. Chr. den 2300 Jahre später nach <em>Edmund
               Halley</em> benannten Kometen.</li>
           <li>Schon 1917 entwickelte der deutsche Raumfahrtpionier <em>Hermann Oberth</em> eine mit Ethanol und
@@ -82,13 +81,13 @@ title: Cosmowiki
     <div id="timeline">
 {% for c in chronicle %}
 <div class="event-container">
-    <div class="event-circle"></div>
-    <div class="event-arrow"></div>
-    <div class="event-content">
-        <p class="event-date">{{c.itemdateyear}}</p>
-        <p class="event-place"><a href="geo:-0.126969,29.600403" title="Ishango, Kongo auf der Karte anzeigen">{{c.itemlocation}}, {{c.itemcountry}}</a></p>
-        <p class="event-name"><a href="{{c.itemurl}}" name="{{c.itemname}}">{{c.itemname}}</a></p>
-    </div>
+  <div class="event-circle"></div>
+  <div class="event-arrow"></div>
+  <div class="event-content">
+      <p class="event-date">{{c.itemdateyear}}</p>
+      <p class="event-place"><a href="geo:-0.126969,29.600403" title="Ishango, Kongo auf der Karte anzeigen">{{c.itemlocation}}, {{c.itemcountry}}</a></p>
+      <p class="event-name"><a href="{{c.itemurl}}" name="{{c.itemname}}">{{c.itemname}}</a></p>
+  </div>
 </div>
 {% endfor %}
     </div>
