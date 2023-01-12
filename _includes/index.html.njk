@@ -29,18 +29,16 @@
     <div id="app">
       <div id="wrapper" class="pure-g">
         <div id="scrollButtons">
-          <ul>
-            <li id="scrollUp">
-              <a href="javascript:self.scrollTo(0,0);" title="scroll zum Anfang"></a>
-            </li>
-            <li id="scrollDown">
-              <a href="javascript:self.scrollTo(0,document.body.scrollHeight);" title="scroll zum Ende"></a>
-            </li>
-          </ul>
+          <button id="scrollUp">
+            <a href="javascript:self.scrollTo(0,0);" title="scroll zum Anfang"></a>
+          </button>
+          <button id="scrollDown">
+            <a href="javascript:self.scrollTo(0,document.body.scrollHeight);" title="scroll zum Ende"></a>
+          </button>
         </div>
         <header class="pure-u-1">
           <div id="brand" class="pure-u-lg-1-6">
-            <a href="/" title="CosmoWiki.de" rel="home"><img src="img/cw_name_30px.jpg" alt="CosmoWiki Title"/> </a>
+            <a href="/" title="CosmoWiki.de" rel="home"><img src="../../img/cw_name_30px.jpg" alt="CosmoWiki Title"/> </a>
           </div>
           <div id="menus" class="pure-u-1 pure-u-lg-5-6">
             <nav id="mobileMenu" class="pure-menu custom-restricted-width pure-u-1-6">
@@ -237,90 +235,90 @@
                     data-orientation="vertical"></div>
                 </li>
                 <li id="logo" class="pure-u-1-3 center">
-                  <a href="/" title="CosmoWiki.de" rel="home"><img src="img/cw_icon_30px.jpg" alt="CosmoWiki Logo"/> </a>
+                  <a href="/" title="CosmoWiki.de" rel="home"><img src="../../img/cw_icon_30px.jpg" alt="CosmoWiki Logo"/> </a>
                 </li>
               </ul>
             </div>
-          </header>
+          </div>
+        </header>
           {{ content | safe }}
-          <footer class="pure-u-1 center">
-            <div id="footerContainer">
-              <div id="sitemap" class="left">
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/chronicle">Chronik</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/people">Personen</a></li>
-                  <li><a href="/de/scientists">Wissenschaftler</a></li>
-                  <li><a href="/de/astronauts">Raumfahrer</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/places">Orte</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/objects">Objekte</a></li>
-                  <li><a href="/de/solar-system">Sonnensystem</a></li>
-                  <li><a href="/de/constellations">Sternbilder</a></li>
-                  <li><a href="/de/stars">Sterne</a></li>
-                  <li><a href="/de/space-stations">Raumstationen</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/astronomy">Astronomie</a></li>
-                  <li><a href="/de/scientists">Wissenschaftler</a></li>
-                  <li><a href="/de/solar-system">Sonnensystem</a></li>
-                  <li><a href="/de/constellations">Sternbilder</a></li>
-                  <li><a href="/de/stars">Sterne</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/spaceflight">Raumfahrt</a></li>
-                  <li><a href="/de/astronauts">Raumfahrer</a></li>
-                  <li><a href="/de/missions">Missionen</a></li>
-                  <li><a href="/de/spacewalks">Weltraumausstiege</a></li>
-                  <li><a href="/de/space-stations">Raumstationen</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
+        <footer class="pure-u-1 center">
+          <div id="footerContainer">
+            <div id="sitemap" class="left">
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/chronicle">Chronik</a></li>
+              </ul>
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/people">Personen</a></li>
+                <li><a href="/de/scientists">Wissenschaftler</a></li>
+                <li><a href="/de/astronauts">Raumfahrer</a></li>
+              </ul>
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/places">Orte</a></li>
+              </ul>
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/objects">Objekte</a></li>
+                <li><a href="/de/solar-system">Sonnensystem</a></li>
+                <li><a href="/de/constellations">Sternbilder</a></li>
+                <li><a href="/de/stars">Sterne</a></li>
+                <li><a href="/de/space-stations">Raumstationen</a></li>
+                <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
+              </ul>
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/astronomy">Astronomie</a></li>
+                <li><a href="/de/scientists">Wissenschaftler</a></li>
+                <li><a href="/de/solar-system">Sonnensystem</a></li>
+                <li><a href="/de/constellations">Sternbilder</a></li>
+                <li><a href="/de/stars">Sterne</a></li>
+                <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
+              </ul>
+              <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
+                <li><a href="/de/spaceflight">Raumfahrt</a></li>
+                <li><a href="/de/astronauts">Raumfahrer</a></li>
+                <li><a href="/de/missions">Missionen</a></li>
+                <li><a href="/de/spacewalks">Weltraumausstiege</a></li>
+                <li><a href="/de/space-stations">Raumstationen</a></li>
+                <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
+              </ul>
+            </div>
+            <div id="extras">
+              <div id="extrasSelf" class="pure-u-1 pure-u-lg-1-2">
+                <ul>
+                  <li><a href="/de/about#whatis" target="_self" title="Über uns">Über uns</a></li>
+                  <li><a href="/de/about#license" target="_self" title="Lizenz">Lizenz</a></li>
+                  <li><a href="/de/about#contribute" target="_self" title="Beitragen">Beitragen</a></li>
+                  <li><a href="/de/about#thanks" target="_self" title="Danke">Danke</a></li>
+                  <li><a href="/de/about#contact" target="_self" title="Kontakt">Kontakt</a></li>
+                  <li><a href="/de/about#imprint" target="_self" title="Impressum">Impressum</a></li>
                 </ul>
               </div>
-              <div id="extras">
-                <div id="extrasSelf" class="pure-u-1 pure-u-lg-1-2">
-                  <ul>
-                    <li><a href="/de/about#whatis" target="_self" title="Über uns">Über uns</a></li>
-                    <li><a href="/de/about#license" target="_self" title="Lizenz">Lizenz</a></li>
-                    <li><a href="/de/about#contribute" target="_self" title="Beitragen">Beitragen</a></li>
-                    <li><a href="/de/about#thanks" target="_self" title="Danke">Danke</a></li>
-                    <li><a href="/de/about#contact" target="_self" title="Kontakt">Kontakt</a></li>
-                    <li><a href="/de/about#imprint" target="_self" title="Impressum">Impressum</a></li>
-                  </ul>
-                </div>
-                <div id="extrasSocial" class="pure-u-1 pure-u-lg-1-2">
-                  <ul>
-                    <li><a id="Twitter" href="https://twitter.com/cosmowiki" title="CosmoWiki.org bei Twitter"></a></li>
-                    <li><a id="Facebook" href="https://www.facebook.com/CosmoWiki.org/"
-                        title="CosmoWiki.org bei Facebook"></a></li>
-                    <li><a id="Github" href="https://github.com/cosmowiki/cosmowiki" title="CosmoWiki.org bei Github"></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div id="version" class="pure-u-1-3 center">
-                <p>v. 1.0.0 Last update: {{ page.date }}</p>
+              <div id="extrasSocial" class="pure-u-1 pure-u-lg-1-2">
+                <ul>
+                  <li><a id="Twitter" href="https://twitter.com/cosmowiki" title="CosmoWiki.org bei Twitter"></a></li>
+                  <li><a id="Facebook" href="https://www.facebook.com/CosmoWiki.org/"
+                      title="CosmoWiki.org bei Facebook"></a></li>
+                  <li><a id="Github" href="https://github.com/cosmowiki/cosmowiki" title="CosmoWiki.org bei Github"></a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </footer>
-        </div>
+            <div id="version" class="pure-u-1-3 center">
+              <p>v. 1.0.0 Last update: {{ page.date }}</p>
+            </div>
+          </div>
+        </footer>
       </div>
-      <script>
-        const summaryToggleButton = document.querySelector("#summaryToggleButton");
-        const summaryRest = document.querySelector("#summaryRest");
-        summaryToggleButton.addEventListener("click", (event) => {
-          event.preventDefault();
-          summaryRest.classList.toggle("hidden");
-          summaryToggleButton.textContent = summaryRest.classList.contains("hidden")
-            ? "Artikel lesen"
-            : "Artikel verbergen";
-        });
-      </script>
-    </body>
+    </div>
+    <script>
+      const summaryToggleButton = document.querySelector("#summaryToggleButton");
+      const summaryReadMore = document.querySelector("#summaryReadMore");
+      summaryToggleButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        summaryReadMore.classList.toggle("hidden");
+        summaryToggleButton.textContent = summaryReadMore.classList.contains("hidden")
+          ? "Artikel lesen"
+         : "Artikel verbergen";
+      });
+    </script>
   </body>
 </html>
