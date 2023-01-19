@@ -17,7 +17,7 @@ title: Cosmowiki
           umgibt und woher wir kommen. Auch die frühen Menschen stellten sich wohl schon die große Frage: Was ist
           dort draußen?</p>
       </div>
-      <div id="summaryReadMore">
+      <div id="summaryRest">
         <div class="summary-img float-left size-md">
           <a href="../../img/events/nebra_lg.jpg" title="Himmelsscheibe von Nebra - Großansicht"><img
               src="../../img/events/nebra_sm.jpg" alt="Himmelsscheibe von Nebra" /></a>

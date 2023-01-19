@@ -31,8 +31,10 @@ ul {list-style-type: none;}
 
 a {text-decoration: none; cursor: pointer;}
 a, a:link, a:visited {color: #55f;} /*transition: all ease 1s;*/
+a img, a:link img, a:visited img {}
 a:focus, a:hover, a:active {text-decoration: underline;}
 /*a:focus, a:hover, a:active {color: #d00; transition: all ease .1s;}*/
+a:focus img, a:hover img, a:active img {}
 button {color: #55f;}
 
 /*>Global Classes ----------------------------------------------------------- */
@@ -81,15 +83,29 @@ button {color: #55f;}
 
 /*	side-buttons ---------------------------------------------------------- */
 #scrollButtons {
-	position: fixed; right: 0; bottom: 35%; width: 2.5em; z-index: 5;
+	position: fixed; right: 0; bottom: 12%; width: 2.5em; z-index: 5;
+	border-width: 1px 0 1px 1px; border-style: solid; border-color: #fff;
+	transition: all ease .3s;
 }
+#scrollButtons:focus,
+#scrollButtons:hover,
+#scrollButtons:active {border-color: #d00; transition: all ease .3s;}
+
+#scrollButtons li {background-color: #ddd; transition: all ease .3s;}
+#scrollButtons li:focus,
+#scrollButtons li:hover,
+#scrollButtons li:active {background-color: #eee; transition: all ease .3s;}
 
 #scrollButtons a {
-	display: block; line-height: 1.25em; font-size: 1.25rem; font-family: FontAwesome;
-	text-decoration: none;
+	display: block; line-height: 1.5em; font-size: 1.5rem; font-family: FontAwesome;
+	text-align: center; overflow: hidden; text-decoration: none;
+	border-style: solid; border-color: #fff;
 }
-#scrollUp a:before {content: '\f102';}
-#scrollDown a:before {content: '\f103';}
+#scrollButtons li#scrollUp {border-width: 1px 0 0 1px;}
+#scrollButtons li#scrollDown {border-width: 0 0 1px 1px;}
+li#scrollUp a:before {margin-left: -.125em; content: '\f102';}
+li#scrollDown a:before {margin-left: -.125em; content: '\f103';}
+
 
 /*	header ------------------------------------------------------------------ */
 header {
@@ -558,6 +574,7 @@ footer #version p {
 }
 
 @media only screen and (min-width: 64em) {
+	#scrollButtons {border: 1px solid #fff;}
 	#mobileMenu {display: none;}
 	#brand,
 	#desktopMenu {display: inline-block;}
