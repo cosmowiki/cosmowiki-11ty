@@ -30,31 +30,17 @@
   </head>
 
   <body>
-    <div id="app">
-      <div id="wrapper" class="pure-g">
-        <nav class="primary">
-          <a href="/">Home</a>
-          <a href="/de/chronicle">Chronik</a>
-        </nav>
+    <nav class="primary">
+      <a href="/">Home</a>
+      <a href="/de/chronicle">Chronik</a>
+    </nav>
 
-        {{ content | safe }}
+    {{ content | safe }}
 
-        <footer>
-          <div>
-            Last update: {{ page.date }}
-          </div>
-        </footer>
+    <footer>
+      <div>
+        Last update: {{ page.date }}
       </div>
-    </div>
-    <script>
-      const summaryToggleButton = document.querySelector("#summaryToggleButton");
-      const summaryRest = document.querySelector("#summaryRest");
-
-      summaryToggleButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        summaryRest.classList.toggle("hidden");
-        summaryToggleButton.textContent = summaryRest.classList.contains("hidden") ? "Artikel lesen" : "Artikel verbergen";
-      });
-    </script>
+    </footer>
   </body>
 </html>
