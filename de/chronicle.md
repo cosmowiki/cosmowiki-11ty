@@ -80,17 +80,17 @@ title: Cosmowiki
   </div>
   <div id="dataArea" class="events module pure-u-1">
     <div id="timeline">
-{% for c in chronicle %}
-  <div class="event-container">
-      <div class="event-circle"></div>
-      <div class="event-arrow"></div>
-      <div class="event-content">
-          <p class="event-date">{{c.itemdateyear}}</p>
-          <p class="event-place"><a href="geo:-0.126969,29.600403" title="Ishango, Kongo auf der Karte anzeigen">{{c.itemlocation}}, {{c.itemcountry}}</a></p>
-          <p class="event-name"><a href="{{c.itemurl}}" name="{{c.itemname}}">{{c.itemname}}</a></p>
+    {% for c in chronicle %}
+      <div class="event-container">
+          <div class="event-circle"></div>
+          <div class="event-arrow"></div>
+          <div class="event-content">
+              <p class="event-date">{{c.itemdateyear}}</p>
+              <p class="event-place"><a href="geo:-0.126969,29.600403" title="Ishango, Kongo auf der Karte anzeigen">{{c.itemlocation}}, {{c.itemcountry}}</a></p>
+              <p class="event-name"><a href="{{c.itemurl}}" name="{{c.itemname}}">{{c.itemname}}</a></p>
+          </div>
       </div>
-  </div>
-{% endfor %}
+    {% endfor %}
     </div>
   </div>
 </main>
