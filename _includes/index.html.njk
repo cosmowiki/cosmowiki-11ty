@@ -3,324 +3,58 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Holger Porsch">
-    <meta name="description" content="{{ title }}">
+    <meta name="description" content="{{title}}">
+
     {% block metaOpenGraph %}
       <meta property="og:title" content="{{ title }}">
       <meta property="og:type" content="website">
       {% if canonicalUrl %}<meta property="og:url" content="{{ canonicalUrl }}">{% endif %}
-      <meta property="og:site_name" content="{{ title }}">
+      <meta property="og:site_name" content="{{title}}">
     {% endblock %}
+
     {% block previewImage %}
-      <meta property="og:image" content="https://cosmowiki.de/img/cw_header.jpg"/>
-      <meta property="og:image:url" content="https://cosmowiki.de/img/cw_header.jpg"/>
-      <meta name="twitter:image" content="https://cosmowiki.de/img/cw_header.jpg"/>
+      <meta property="og:image" content="https://cosmowiki.de/img/cw_header.jpg" />
+      <meta property="og:image:url" content="https://cosmowiki.de/img/cw_header.jpg" />
+      <meta name="twitter:image" content="https://cosmowiki.de/img/cw_header.jpg" />
     {% endblock %}
+
     {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}">{% endif %}
-    <title>{{ title }}</title>
+    <title>{{title}}</title>
     <script src="https://kit.fontawesome.com/4a47b447cd.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../../img/favicon.ico"/>
+    <link rel="icon" href="../../img/favicon.ico" />
     <link rel="stylesheet" href="/css/cw.css">
     <link rel="stylesheet" href="/css/chronicle.css">
   </head>
+
   <body>
     <div id="app">
       <div id="wrapper" class="pure-g">
-        <div id="scrollButtons">
-          <ul>
-            <li id="scrollUp">
-              <a href="javascript:self.scrollTo(0,0);" title="scroll zum Anfang"></a>
-            </li>
-            <li id="scrollDown">
-              <a href="javascript:self.scrollTo(0,document.body.scrollHeight);" title="scroll zum Ende"></a>
-            </li>
-          </ul>
-        </div>
-        <header class="pure-u-1">
-          <div id="brand" class="pure-u-lg-1-6">
-            <a href="/" title="CosmoWiki.de" rel="home"><img src="img/cw_name_30px.jpg" alt="CosmoWiki Title"/> </a>
+        <nav class="primary">
+          <a href="/">Home</a>
+          <a href="/de/chronicle">Chronik</a>
+        </nav>
+
+        {{ content | safe }}
+
+        <footer>
+          <div>
+            Last update: {{ page.date }}
           </div>
-          <div id="menus" class="pure-u-1 pure-u-lg-5-6">
-            <nav id="mobileMenu" class="pure-menu custom-restricted-width pure-u-1-6">
-              <a id="mobileMenuToggle" class="menu-link" href="#" title="Navigation">
-                <span class="bar"></span>
-              </a>
-              <ul class="pure-menu-list">
-                <li class="pure-menu-item">
-                  <a class="pure-menu-link menu-item chronicle" href="/de/chronicle">Chronik</a>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item persons" href="/de/people">Personen</a>
-                  <ul class="pure-menu-children sub-menu persons">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item persons" href="/de/scientists">Wissenschaftler</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item persons" href="/de/astronauts">Raumfahrer</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item places" href="/de/places">Orte</a>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item objects" href="/de/objects">Objekte</a>
-                  <ul class="pure-menu-children sub-menu objects">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/solar-system">Sonnensystem</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/constellations">Sternbilder</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/stars">Sterne</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/space-stations">Raumstationen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item astronomy" href="/de/astronomy">Astronomie</a>
-                  <ul class="pure-menu-children sub-menu astronomy">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/scientists">Wissenschaftler</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/solar-system">Sonnensystem</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/constellations">Sternbilder</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/stars">Sterne</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item spaceflight" href="/de/spaceflight">Raumfahrt</a>
-                  <ul class="pure-menu-children sub-menu spaceflight">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/astronauts">Raumfahrer</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/missions">Missionen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/spacewalks">Weltraumausstiege</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/space-stations">Raumstationen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-                <li id="toggleShariff" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a href="#" class="pure-menu-link menu-item"></a>
-                  <ul class="pure-menu-children sub-menu">
-                    <li class="pure-menu-item">
-                      <div
-                        class="shariff center"
-                        data-services="twitter, facebook, googleplus, info"
-                        data-twitter-via="cosmowiki"
-                        data-orientation="vertical"></div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-            <nav id="desktopMenu" class="pure-menu pure-menu-horizontal pure-u-lg-4-5 center">
-              <ul class="pure-menu-list">
-                <li class="pure-menu-item">
-                  <a class="pure-menu-link menu-item chronicle" href="/de/chronicle">Chronik</a>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item persons" href="/de/people">Personen</a>
-                  <ul class="pure-menu-children sub-menu persons">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item persons" href="/de/scientists">Wissenschaftler</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item persons" href="/de/astronauts">Raumfahrer</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item">
-                  <a class="pure-menu-link menu-item places" href="/de/places">Orte</a>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item objects" href="/de/objects">Objekte</a>
-                  <ul class="pure-menu-children sub-menu objects">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/solar-system">Sonnensystem</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/constellations">Sternbilder</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/stars">Sterne</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/space-stations">Raumstationen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item objects" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item astronomy" href="/de/astronomy">Astronomie</a>
-                  <ul class="pure-menu-children sub-menu astronomy">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/scientists">Wissenschaftler</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/solar-system">Sonnensystem</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/constellations">Sternbilder</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/stars">Sterne</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item astronomy" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                  <a class="pure-menu-link menu-item spaceflight" href="/de/spaceflight">Raumfahrt</a>
-                  <ul class="pure-menu-children sub-menu spaceflight">
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/astronauts">Raumfahrer</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/missions">Missionen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/spacewalks">Weltraumausstiege</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/space-stations">Raumstationen</a>
-                    </li>
-                    <li class="pure-menu-item">
-                      <a class="pure-menu-link sub-menu-item spaceflight" href="/de/space-telescopes">Weltraumteleskope</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-            <div id="sideMenu" class="pure-u-5-6 pure-u-lg-1-5">
-              <ul class="pure-u-1">
-                <li id="toggleSearch" class="pure-u-1-3 center">
-                  <a></a>
-                  <div id="search" class="pure-u-2-3 center">
-                    <input type="text" name="search" placeholder="suchen ..." required=""/>
-                  </div>
-                </li>
-                <li id="toggleShariff" class="pure-u-1-3 center">
-                  <a></a>
-                  <div
-                    class="shariff center"
-                    data-services="twitter, facebook, googleplus, info"
-                    data-twitter-via="cosmowiki"
-                    data-orientation="vertical"></div>
-                </li>
-                <li id="logo" class="pure-u-1-3 center">
-                  <a href="/" title="CosmoWiki.de" rel="home"><img src="img/cw_icon_30px.jpg" alt="CosmoWiki Logo"/> </a>
-                </li>
-              </ul>
-            </div>
-          </header>
-          {{ content | safe }}
-          <footer class="pure-u-1 center">
-            <div id="footerContainer">
-              <div id="sitemap" class="left">
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/chronicle">Chronik</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/people">Personen</a></li>
-                  <li><a href="/de/scientists">Wissenschaftler</a></li>
-                  <li><a href="/de/astronauts">Raumfahrer</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/places">Orte</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/objects">Objekte</a></li>
-                  <li><a href="/de/solar-system">Sonnensystem</a></li>
-                  <li><a href="/de/constellations">Sternbilder</a></li>
-                  <li><a href="/de/stars">Sterne</a></li>
-                  <li><a href="/de/space-stations">Raumstationen</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/astronomy">Astronomie</a></li>
-                  <li><a href="/de/scientists">Wissenschaftler</a></li>
-                  <li><a href="/de/solar-system">Sonnensystem</a></li>
-                  <li><a href="/de/constellations">Sternbilder</a></li>
-                  <li><a href="/de/stars">Sterne</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
-                </ul>
-                <ul class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-6">
-                  <li><a href="/de/spaceflight">Raumfahrt</a></li>
-                  <li><a href="/de/astronauts">Raumfahrer</a></li>
-                  <li><a href="/de/missions">Missionen</a></li>
-                  <li><a href="/de/spacewalks">Weltraumausstiege</a></li>
-                  <li><a href="/de/space-stations">Raumstationen</a></li>
-                  <li><a href="/de/space-telescopes">Weltraumteleskope</a></li>
-                </ul>
-              </div>
-              <div id="extras">
-                <div id="extrasSelf" class="pure-u-1 pure-u-lg-1-2">
-                  <ul>
-                    <li><a href="/de/about#whatis" target="_self" title="Über uns">Über uns</a></li>
-                    <li><a href="/de/about#license" target="_self" title="Lizenz">Lizenz</a></li>
-                    <li><a href="/de/about#contribute" target="_self" title="Beitragen">Beitragen</a></li>
-                    <li><a href="/de/about#thanks" target="_self" title="Danke">Danke</a></li>
-                    <li><a href="/de/about#contact" target="_self" title="Kontakt">Kontakt</a></li>
-                    <li><a href="/de/about#imprint" target="_self" title="Impressum">Impressum</a></li>
-                  </ul>
-                </div>
-                <div id="extrasSocial" class="pure-u-1 pure-u-lg-1-2">
-                  <ul>
-                    <li><a id="Twitter" href="https://twitter.com/cosmowiki" title="CosmoWiki.org bei Twitter"></a></li>
-                    <li><a id="Facebook" href="https://www.facebook.com/CosmoWiki.org/"
-                        title="CosmoWiki.org bei Facebook"></a></li>
-                    <li><a id="Github" href="https://github.com/cosmowiki/cosmowiki" title="CosmoWiki.org bei Github"></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div id="version" class="pure-u-1-3 center">
-                <p>v. 1.0.0 Last update: {{ page.date }}</p>
-              </div>
-            </div>
-          </footer>
-        </div>
+        </footer>
       </div>
-      <script>
-        const summaryToggleButton = document.querySelector("#summaryToggleButton");
-        const summaryRest = document.querySelector("#summaryRest");
-        summaryToggleButton.addEventListener("click", (event) => {
-          event.preventDefault();
-          summaryRest.classList.toggle("hidden");
-          summaryToggleButton.textContent = summaryRest.classList.contains("hidden")
-            ? "Artikel lesen"
-            : "Artikel verbergen";
-        });
-      </script>
-    </body>
+    </div>
+    <script>
+      const summaryToggleButton = document.querySelector("#summaryToggleButton");
+      const summaryRest = document.querySelector("#summaryRest");
+
+      summaryToggleButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        summaryRest.classList.toggle("hidden");
+        summaryToggleButton.textContent = summaryRest.classList.contains("hidden") ? "Artikel lesen" : "Artikel verbergen";
+      });
+    </script>
   </body>
 </html>
