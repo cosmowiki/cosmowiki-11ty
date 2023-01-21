@@ -88,8 +88,18 @@ button {color: #55f;}
 	display: block; line-height: 1.25em; font-size: 1.25rem; font-family: FontAwesome;
 	text-decoration: none;
 }
-#scrollUp a:before {content: '\f102';}
-#scrollDown a:before {content: '\f103';}
+#scrollButtons a:focus,
+#scrollButtons a:hover,
+#scrollButtons a:active {color: #d00;}
+#scrollUp a::before {content: '\f102';}
+#scrollDown a::before {content: '\f103';}
+
+@media only screen and (min-width: 1100px) {
+	#scrollButtons {
+		bottom: 40%; bottom: calc(50% - 3.5em);
+		left: calc(50% + 505px); width: 2.5em;
+	}
+}
 
 /*	header ------------------------------------------------------------------ */
 header {
@@ -105,6 +115,10 @@ header {
 
 /*			- mobileMenu -------------------------------------------------------- */
 #mobileNav {position: relative;}
+
+@media only screen and (min-width: 64em) {
+	#mobileNav {display: none;}
+}
 
 #mobileNav .menu-link {
 	display: block; width: 42px; height: 34px;
@@ -172,11 +186,11 @@ header {
 #mobileNav .pure-menu-list,
 #mobileNav .pure-menu-children {box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);}
 #mobileNav .pure-menu-item {background: #fff;}
-#mobileNav #toggleShariff {border-top: 1px solid #ccf;}
-#mobileNav #toggleShariff > a:before {font-family: inherit; content: 'Teilen';}
-#mobileNav #toggleShariff:focus .shariff,
-#mobileNav #toggleShariff:hover .shariff,
-#mobileNav #toggleShariff:active .shariff {display: block;}
+#mobileNav #toggleShare {border-top: 1px solid #ccf;}
+#mobileNav #toggleShare > a:before {font-family: inherit; content: 'Teilen';}
+#mobileNav #toggleShare:focus .shariff,
+#mobileNav #toggleShare:hover .shariff,
+#mobileNav #toggleShare:active .shariff {display: block;}
 
 /*			- desktopMenu ------------------------------------------------------- */
 #desktopNav {max-width: 1000px; margin: 0 auto;}
@@ -184,30 +198,65 @@ header {
 #desktopNav li {text-align: left; line-height: 1.25em;}
 #desktopNav ul ul li {display: block;}
 
+@media only screen and (min-width: 64em) {
+	#desktopNav ul ul {box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, .8);	}
+	#desktopNav ul ul li a {background: #fff; border-top: 1px solid #ddd;}
+
+	#desktopNav .pure-menu-link:focus,
+	#desktopNav .pure-menu-link:hover,
+	#desktopNav .pure-menu-link:active {background: #eef;}
+}
+
 /*			- sideMenu ---------------------------------------------------------- */
-#searchContainer ul li (display: inline-block;)
-#searchContainer #toggleSearch a,
-#searchContainer #toggleShariff a {display: none;}
-#searchContainer #toggleSearch a:before,
-#searchContainer #toggleShariff a:before {font-family: FontAwesome;}
-#searchContainer #toggleSearch > a:before {content: '\f002';}
+#toggleSearch,
+#toggleShare,
+#logo {display: inline-block; line-height: 1.25em; vertical-align: middle;}
+
 #searchContainer #search {position: absolute; top: 0; left: 16.666%; background: #fff;}
+
+#searchContainer #toggleSearch a,
+#searchContainer #toggleShare a {display: none; font-family: FontAwesome; font-weight: normal;}
+
+#searchContainer #toggleSearch a:focus,
+#searchContainer #toggleShare a:focus,
+#searchContainer #toggleSearch a:hover,
+#searchContainer #toggleShare a:hover,
+#searchContainer #toggleSearch a:active,
+#searchContainer #toggleShare a:active {color: #d00; text-decoration: none;}
+
+#searchContainer #toggleSearch > a:before {content: '\f002';}
+
 #searchContainer #search input {
-	display: inline-block; margin: .125em 0; padding: .125em .25em; width: 50%;
-	
-	background:#eee; box-shadow: none;
-	border: 1px solid #aaf; border-radius: 0;
-	transition: width 0.3s ease-in-out;
+	display: inline-block; margin: .325em 0; vertical-align: middle; padding: .125em .25em; width: 50%;
+	background:#f8f8f8; box-shadow: none;
+	border: 1px solid #55f; border-radius: 0;
+	transition: width .1s ease-in-out;
 }
 #searchContainer #search input:focus,
 #searchContainer #search input:hover,
 #searchContainer #search input:active {
-	width: 75%; outline: none; border: 1px solid #d00;
+	outline: none; border: 1px solid #d00;
 }
-#searchContainer #toggleShariff > a:before {content: '\f045';}
-#searchContainer #toggleShariff:focus div.shariff,
-#searchContainer #toggleShariff:hover div.shariff,
-#searchContainer #toggleShariff:active div.shariff {display: block;}
+#searchContainer #toggleShare > a:before {content: '\f064';}
+#searchContainer #toggleShare:focus div.shariff,
+#searchContainer #toggleShare:hover div.shariff,
+#searchContainer #toggleShare:active div.shariff {display: block;}
+
+@media only screen and (min-width: 64em) {
+	#searchContainer #toggleSearch a,
+	#searchContainer #toggleShare a {display: block;}
+
+	#searchContainer #search {display: none;}
+
+	#searchContainer #toggleSearch:focus #search,
+	#searchContainer #toggleSearch:hover #search,
+	#searchContainer #toggleSearch:active #search {display: inline-block;}
+
+	#searchContainer #search input {width: 33%; border-radius: 5px;}
+	/* #searchContainer #search input:focus,
+	#searchContainer #search input:hover,
+	#searchContainer #search input:active {width: 50%;} */
+}
 
 /*			-  logo ------------------------------------------------------------- */
 #logo {text-align: right;}
@@ -216,6 +265,10 @@ header {
 
 /*	main -------------------------------------------------------------------- */
 main {margin: 1em auto 0; max-width: 1000px;}
+
+@media only screen and (min-width: 64em) {
+	main {margin-top: 3.5em;}
+}
 
 /*	siteTitle --------------------------------------------------------------- */
 #siteTitle {
@@ -237,6 +290,11 @@ main {margin: 1em auto 0; max-width: 1000px;}
 #siteTitle h1 {margin-top: .5em;}
 #siteTitle h3 {font-size: 1.5em;}
 
+@media only screen and (min-width: 48em) {
+	/* #siteTitle h1 {padding: .5em 0 0; font-size: 2rem;} */
+	/* #siteTitle h3 {padding: .25em 0 .75em; font-size: 1.5rem;} */
+}
+
 /*	todo -------------------------------------------------------------------- */
 #todo {text-align: center; background: red;}
 
@@ -252,11 +310,18 @@ main {margin: 1em auto 0; max-width: 1000px;}
   overflow: hidden;
 	border-bottom: 1px solid #ddd;
 }
+@media only screen and (min-width: 35.5em) {
+	#summaryContainer {padding: 0 .5em;}
+}
+@media only screen and (min-width: 48em) {
+	#summaryContainer {padding: 1.5em 1em 0;}
+}
 
 #summaryToggleButton {
-	position: absolute; top: .25em; right: 1em;
-	font-size: .9em;
+	position: absolute; top: 0; right: .5em;
+	color: #55f; font-size: 1.2em;
 }
+#summaryToggleButton:hover {color: #d00;}
 #summary > div {
   display: block;
 }
@@ -405,8 +470,8 @@ div.summary-img.width-25,
 	color: #55f;
 	transition: color .2s ease-in-out;
 }
-/*	------------------------------------------------------------------------- */
 
+/*	------------------------------------------------------------------------- */
 #sortArea, #filterArea {display: none;}
 #controlArea a {display: inline; margin: .2em;}
 
@@ -513,54 +578,15 @@ footer #version p {
 
 /* -------------------------------------------------------------------------- */
 /* breakpoints min-width: sm = 35.5em, md = 48em, lg = 64em, xl = 80em ------ */
-@media only screen and (min-width: 35.5em) {
-	#summaryContainer {padding: 0 .5em;}
-	#extrasSocial li {margin: 0 1.5em;}
-}
 
 @media only screen and (min-width: 48em) {
-	/* #siteTitle h1 {padding: .5em 0 0; font-size: 2rem;} */
-	/* #siteTitle h3 {padding: .25em 0 .75em; font-size: 1.5rem;} */
-
-	#summaryContainer {padding: 1.5em 1em 0;}
-
 	#sortArea, #filterArea, #sort form, #filter form {display: inline;}
 	#sort a, #filter a {display: none;}
-
-	#extrasSocial li {margin: 0 2em;}
 }
 
 @media only screen and (min-width: 64em) {
-	#mobileNav {display: none;}
-
-	/* #brand img {position: absolute; top: 2px; left: 2px;} */
-
-	#desktopNav ul ul {
-		box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, .8);
-	}
-	#desktopNav ul ul li a {background: #fff; border-top: 1px solid #ddd;}
-	/* #desktopNav ul ul li:last-child a {border-bottom: none;} */
-
-	#desktopNav .pure-menu-link:focus,
-	#desktopNav .pure-menu-link:hover,
-	#desktopNav .pure-menu-link:active {background: #eef;}
-	/* #desktopNav .pure-menu-children {border-top: 1px solid #ddd;} */
-
-	#searchContainer #toggleSearch a,
-	#searchContainer #toggleShariff a {display: block; line-height: 34px;}
-	#searchContainer #search {display: none;}
-	#searchContainer #toggleSearch:focus #search,
-	#searchContainer #toggleSearch:hover #search,
-	#searchContainer #toggleSearch:active #search {display: inline-block;}
-	#searchContainer #search input {width: 33%; border-radius: 5px;}
-	#searchContainer #search input:focus,
-	#searchContainer #search input:hover,
-	#searchContainer #search input:active {width: 50%;}
-
 	#logo {text-align: center;}
 	#logo img {margin: 2px 0 0 0;}
-
-	main {margin-top: 3.5em;}
 
 	#mobileNavs,
 	#navToggle {display: none;}
@@ -572,16 +598,5 @@ footer #version p {
 	/* #sitemap ul:first-child li {margin: 0 .25em 0 0;}
 	#sitemap ul:last-child li {margin: 0 0 0 .25em;}
 	#sitemap a {padding-left: .25em;} */
-
-	/* #extrasSelf,
-	#extrasSocial {display: inline-block; text-align: center;}
-	#extrasSelf li {width: auto; margin: 0 .5em;}
-	#extrasSocial li {margin: 0 2em;} */
 }
 
-@media only screen and (min-width: 1100px) {
-	#scrollButtons {
-		bottom: 40%; bottom: calc(50% - 2.25em);
-		left: calc(50% + 505px); width: 2.5em;
-	}
-}

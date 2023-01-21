@@ -67,7 +67,7 @@
           </button>
         </div>
         <header class="pure-g">
-          <div id="brand" class="pure-u-1-6 pure-u-lg-1-6">
+          <div id="brand" class="pure-u-1-6 pure-u-lg-1-6 center">
             <a href="/" title="CosmoWiki.de" rel="home"><img src="../../img/cw_name_30px.jpg" alt="CosmoWiki Title"/>
             </a>
           </div>
@@ -155,7 +155,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li id="toggleShariff" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                  <li id="toggleShare" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                     <a href="#" class="pure-menu-link menu-item"></a>
                     <ul class="pure-menu-children">
                       <li class=" pure-menu-item pure-u-1-6">
@@ -258,16 +258,16 @@
                           <a href="/de/chronicle">Chronik</a>
                         </nav> #}
           </div>
-          <div id="searchContainer" class="pure-u-1-6 pure-u-lg-1-6">
+          <div id="searchContainer" class="pure-u-1-6 pure-u-lg-1-6 center">
             <nav class="pure-menu pure-menu-horizontal custom-can-transform">
               <ul class="pure-u-1">
                 <li id="toggleSearch" class="pure-u-1-3 center">
                   <a></a>
                   <div id="search" class="pure-u-2-3 center">
-                    <input type="text" name="search" placeholder="suchen ..." required=""/>
+                    <input type="text" name="search" placeholder="suchen ..." required="" />
                   </div>
                 </li>
-                <li id="toggleShariff" class="pure-u-1-3 center">
+                <li id="toggleShare" class="pure-u-1-3 center">
                   <a></a>
                   <div
                     class="shariff center"
@@ -292,7 +292,7 @@
           </div>
           <div id="summary" class="pure-u-1 left">
             <div id="summaryContainer">
-              <button id="summaryToggleButton">Artikel verbergen</button>
+              <div id="summaryToggleButton"><i class="fa-regular fa-square-minus" title="Artikel verbergen"></i></div>
               <div id="summaryTeaser">
                 <p class="summary-text">
                   Seit Jahrtausenden blicken wir in den Himmel und versuchen zu ergründen, was uns umgibt und woher wir kommen. Auch die
@@ -302,7 +302,7 @@
                 <div class="summary-img float-left size-md">
                   <a href="img/events/nebra_lg.jpg" title="Himmelsscheibe von Nebra - Großansicht"><img src="../../img/events/nebra_sm.jpg" alt="Himmelsscheibe von Nebra"/>
                   </a>
-                  <p class="summary-img-text">Himmelsscheibe<br/>Quelle: Dbachmann<br/><a href="http://creativecommons.org/licenses/by-sa/3.0/" title="CC BY-SA 3.0">CC BY-SA 3.0</a>
+                  <p class="summary-img-text">Himmelsscheibe<br/>Bild: Dbachmann<br/><a href="http://creativecommons.org/licenses/by-sa/3.0/" title="CC BY-SA 3.0">CC BY-SA 3.0</a>
                   </p>
                 </div>
                 <p class="summary-text">Täglich ziehen Sonne, Mond und Sterne am Firmament entlang und bestimmen den Rhythmus des Lebens
@@ -4083,14 +4083,17 @@
       </div>
     </div>
     <script>
-      const summaryToggleButton = document.querySelector("#summaryToggleButton");
+      const summaryToggleButton = document.querySelector("#summaryToggleButton i");
       const summaryReadMore = document.querySelector("#summaryReadMore");
       summaryToggleButton.addEventListener("click", (event) => {
         event.preventDefault();
         summaryReadMore.classList.toggle("hidden");
-        summaryToggleButton.textContent = summaryReadMore.classList.contains("hidden")
+        summaryToggleButton.title = summaryReadMore.classList.contains("hidden")
           ? "Artikel lesen"
           : "Artikel verbergen";
+        summaryToggleButton.classList = summaryReadMore.classList.contains("hidden")
+          ? "fa-regular fa-square-plus"
+          : "fa-regular fa-square-minus";
       });
     </script>
   </body>
