@@ -1,0 +1,56 @@
+#about ul li.question {
+  background: rgba(255,255,255,.8);
+  border-bottom: 1px solid #fff;
+}
+#about ul li.question:last-child {
+  border-bottom: none;
+}
+
+.question-link.collapsed:after {content: " \25B8";}
+.question-link.collapsed:focus:after,
+.question-link.collapsed:hover:after,
+.question-link.collapsed:active:after {content: " \25BE";}
+.question-link.expanded:after {content: " \25BE";}
+.question-link.expanded:focus:after,
+.question-link.expanded:hover:after,
+.question-link.expanded:active:after {content: " \25B8";}
+
+#about .question:hover {background: rgba(255,255,255,.9);}
+#about .question-link {
+  display: block; padding: 1.5em .5em;
+  font-size: 1.25rem; font-weight: 300;
+}
+#about ul.answer {padding-top: 40px;}
+#about ul ul li p {display: block; margin: 0 1em 1em;}
+
+#contact form {margin: 0 1em;}
+#contact label,
+#contact button {display: block;}
+#contact input,
+#contact textarea {
+  margin-top: .25em; padding: .25em; width: 100%;
+  background: #fff; border: 1px solid #aaf; border-radius: 5px;
+  box-shadow: inset 1px 1px 2px #ccc;
+}
+#contact label {margin-bottom: 1em; text-align: left;}
+#contact textarea {height: 8em;}
+#contact button {
+  margin-bottom: 1em; padding: .25em .5em;
+  color: #fff;
+  background: #d00; border: none;
+}
+#contact button:focus,
+#contact button:hover,
+#contact button:active {background: #aaf;}
+
+/* -------------------------------------------------------------------------- */
+/* breakpoints min-width: sm = 35.5em, md = 48em, lg = 64em, xl = 80em ------ */
+@media only screen and (min-width: 64em) {
+  #about ul li.question:first-child {
+    border-radius: 5px 5px 0 0;
+  }
+  #about ul li.question:last-child {
+    border-radius: 0 0 5px 5px;
+  }
+  #contact button {border-radius: 5px;}
+}
